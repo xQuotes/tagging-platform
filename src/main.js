@@ -12,6 +12,15 @@ import axios from './http'
 Vue.prototype.axios = axios;
 Vue.use(VueRouter);
 Vue.use(ElementUI);
+Vue.directive('title', {
+  inserted: function (el, binding) {
+    if(binding.value.title){
+      document.title = binding.value.title
+    }else{
+      document.title = binding.value
+    }
+  }
+})
 new Vue({
   el: '#app',
   router,

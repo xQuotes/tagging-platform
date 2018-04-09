@@ -1,6 +1,6 @@
 <template>
-  <div class="register" v-title="'注册'">
-    注册
+  <div class="notfound" v-title="'404'">
+    404
   </div>
 </template>
 

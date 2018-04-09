@@ -1,6 +1,6 @@
 <template>
-  <div class="register" v-title="'注册'">
-    注册
+  <div class="vedio" v-title="'培训视频'">
+    培训视频
   </div>
 </template>
 

@@ -1,9 +1,8 @@
 <template>
-  <div class="register" v-title="'注册'">
-    注册
+  <div class="home" v-title="'首页'">
+    首页
   </div>
 </template>
-
 <script>
 export default {
   data () {

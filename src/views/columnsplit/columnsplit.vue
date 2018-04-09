@@ -1,6 +1,6 @@
 <template>
-  <div class="register" v-title="'注册'">
-    注册
+  <div class="columnsplit" v-title="'列切分标注'">
+    列切分
   </div>
 </template>
 

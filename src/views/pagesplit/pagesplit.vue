@@ -1,6 +1,6 @@
 <template>
-  <div class="register" v-title="'注册'">
-    注册
+  <div class="pagesplit" v-title="'页切分标注'">
+    页切分
   </div>
 </template>
 

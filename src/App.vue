@@ -21,11 +21,8 @@ export default {
     top:0;
     bottom:0;
     right:0;
-    background:#ccc;
   }
-  body{
-    font-family: Microsoft Yahei,Open Sans,Lantinghei SC,Hiragino Sans GB,STHeiti,WenQuanYi Micro Hei,SimSun,sans-serif,Helvetica Neue, Helvetica;
-  }
+
   html,body{
     height:100%;
   }
@@ -67,13 +64,16 @@ export default {
     font-size:100%;
     background:transparent;
   }
-
-  body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{
-    margin:0;
-    padding:0;
+  body{
+    font-family: Microsoft Yahei,Open Sans,Lantinghei SC,Hiragino Sans GB,STHeiti,WenQuanYi Micro Hei,SimSun,sans-serif,Helvetica Neue, Helvetica;
+    background:#f7f4e3 url(assets/bg.jpg) no-repeat;
+    background-size:cover;
   }
   a {
     text-decoration: none;
+  }
+  a:link,a:visited,a:active{
+    color: #323232;
   }
   ul,ol {
     margin: 0;
@@ -95,6 +95,9 @@ export default {
   h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
     font-size: 100%;
+  }
+  em{
+    font-style:normal;
   }
   /*去除ie浏览器input中的自带删除图标*/
   input::-ms-clear{display:none;}

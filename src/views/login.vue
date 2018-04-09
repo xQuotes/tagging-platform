@@ -1,5 +1,5 @@
 <template>
-  <div class="login">
+  <div class="login" v-title="'登录'">
     登录
   </div>
 </template>
