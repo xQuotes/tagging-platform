@@ -77,6 +77,7 @@ export default {
 <style lang="scss" scoped>
   .index-in{
     .page-wrapper{
+      position:relative;
       margin-top:50px;
       min-height:550px;
       background-color: #fff;

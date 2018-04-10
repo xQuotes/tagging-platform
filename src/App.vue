@@ -104,4 +104,7 @@ export default {
   /*清除浮动*/
   .clearfix:after{content:'.';display:block;width:0;visibility:hidden;height:0;clear:both;}
   .clearfix{*zoom:1;}
+  .el-dropdown-menu__item{
+    min-width:60px;
+  }
 </style>
