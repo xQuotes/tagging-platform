@@ -80,12 +80,13 @@ export default {
       position:relative;
       margin-top:50px;
       min-height:550px;
-      background-color: #fff;
       .header{
         height:50px;
         line-height:50px;
-        background-color: #5C9ACF;
+        background-color: #D89020;
         padding:0 10px;
+        border-top-left-radius:5px;
+        border-top-right-radius:5px;
         .left{
           span{
             color: #fff;
@@ -106,33 +107,37 @@ export default {
         }
       }
       .container{
-        margin-top:20px;
+        padding-top:20px;
+        min-height:550px;
+        background:#fff;
+        border-bottom-left-radius:5px;
+        border-bottom-right-radius:5px;
         .sidebar-wrapper{
           .sidebar{
-            width: 180px;
+            width: 145px;
             float: left;
             position: relative;
             margin-right: -100%;
             .sidebar-menu{
-              border-left:1px solid #ccc;
+              border-left:1px solid #767676;
               li{
                 padding:0 10px;
                 height:36px;
                 line-height:36px;
                 text-align: center;
-                border:1px solid #ccc;
+                border:1px solid #767676;
                 border-left:0 none;
-                margin-bottom:15px;
+                margin-bottom:10px;
                 &.active{
-                  background-color: #5C9ACF;
-                  border-color: #5C9ACF;
+                  background-color: #D89020;
+                  border-color: #D89020;
                   a{
                     color: #fff;
                   }
                 }
                 &.router-link-active{
-                  background-color: #5C9ACF;
-                  border-color: #5C9ACF;
+                  background-color: #D89020;
+                  border-color: #D89020;
                   color: #fff;
                   a{
                     color: #fff;

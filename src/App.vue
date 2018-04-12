@@ -66,7 +66,7 @@ export default {
   }
   body{
     font-family: Microsoft Yahei,Open Sans,Lantinghei SC,Hiragino Sans GB,STHeiti,WenQuanYi Micro Hei,SimSun,sans-serif,Helvetica Neue, Helvetica;
-    background:#f7f4e3 url(assets/bg.jpg) no-repeat;
+    background:#e0e0e0 url(assets/bg.jpg) no-repeat;
     background-size:cover;
   }
   a {
