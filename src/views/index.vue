@@ -22,7 +22,7 @@
         </div>
         <!-- dialog 修改密码弹窗 -->
          <el-dialog title="修改密码 :" :visible.sync="dialogFormVisible" width="30%" >
-            <el-form :model="form" :rules="rules" ref="ruleForm"  >
+            <el-form :model="form" :rules="rules" ref="form"  >
             <el-form-item label="原密码 :" prop="pass" :label-width="formLabelWidth">
             <el-input v-model="form.pass" type="password" auto-complete="off" value="" ></el-input>
             </el-form-item>
@@ -36,7 +36,7 @@
             </el-form>
             <div slot="footer" class="dialog-footer">
             <el-button @click="dialogFormVisible = false">取 消</el-button>
-            <el-button type="primary" @click="updatePwd();dialogFormVisible = false;">确 定</el-button>
+            <el-button type="primary" @click.native="updatePwd('form');">确 定</el-button>
             </div>
         </el-dialog>
 
@@ -112,10 +112,10 @@ export default {
       if (value === "") {
           callback(new Error("请输入原密码"));
       } else {
-          // if (this.form.pass !== "") {
-          //   this.$refs.ruleForm.validateField("newpass");
-          // }
-          callback();
+        //   if (this.form.pass !== "") {
+        //      this.$refs.ruleForm.validateField("newpass");
+        //  }
+           callback();
       }
     };
     var validateNewPass = (rule, value, callback) => {
@@ -125,7 +125,7 @@ export default {
         // if (this.form.newpass !== "") {
         //   this.$refs.ruleForm.validateField("checkPass");
         // }
-        callback();
+         callback();
       }
     };
     var validatePass2 = (rule, value, callback) => {
@@ -133,6 +133,7 @@ export default {
         callback(new Error("请再次输入新密码"));
       } else if (value !== this.form.newpass) {
         callback(new Error("两次输入密码不一致!"));
+      
       } else {
         callback();
       }
@@ -147,6 +148,7 @@ export default {
     pass: [{ validator: validatePass, trigger: "blur" }],
     newpass: [{ validator: validateNewPass, trigger: "blur" }],
     checkpass: [{ validator: validatePass2, trigger: "blur" }],
+     
    },
   dialogTableVisible: false,
   dialogFormVisible: false,
@@ -167,21 +169,19 @@ export default {
        }
      },
      // 请求：修改密码
-      updatePwd ()  {
-        this.$refs.ruleForm.validate(function(result){
-         if(result){
-          
-           alert("成功");
-         } else if(result==""&&result==null){
-           alert("请填写正确信息");
-         }else{
-           alert("请填写信息");
-         }
-        })
+      updatePwd (from)  {
+        this.$refs.form.validate((valid) => {
+           if(valid){
+             alert("修改成功")
+           this.dialogFormVisible=false;
+           }else{
+             alert("信息不正确");
+           }
+        }
+        )
+       
       },
-      close(){
-        alert("关闭");
-      }
+      
   }
 }
 </script>
@@ -194,23 +194,21 @@ export default {
   .index-in{
     .page-wrapper{
       position:relative;
-      margin-top:30px;
+      margin-top:50px;
       min-height:550px;
+      background-color: #fff;
       .header{
         height:50px;
         line-height:50px;
-        background-color: #D89020;
+        background-color: #5C9ACF;
         padding:0 10px;
-        border-top-left-radius:5px;
-        border-top-right-radius:5px;
-        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
         .left{
           span{
             color: #fff;
             font-size:14px;
           }
           em{
-            color: #ec0000;
+            color: #fff;
             font-size:14px;
           }
         }
@@ -224,45 +222,33 @@ export default {
         }
       }
       .container{
-        padding:20px 0 50px 0;
-        min-height:520px;
-        margin-bottom:150px;
-        background:#fff;
-        border-bottom-left-radius:5px;
-        border-bottom-right-radius:5px;
-        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
-        padding-top:20px;
+        margin-top:20px;
         .sidebar-wrapper{
           .sidebar{
-            width: 145px;
+            width: 180px;
             float: left;
             position: relative;
             margin-right: -100%;
             .sidebar-menu{
-              border-left:1px solid #e6e6e6;
+              border-left:1px solid #ccc;
               li{
                 padding:0 10px;
                 height:36px;
                 line-height:36px;
-                /*text-align: center;*/
-                border:1px solid #e6e6e6;
+                text-align: center;
+                border:1px solid #ccc;
                 border-left:0 none;
-                margin-bottom:10px;
-                font-size:14px;
-                background:#f9f9f9;
-                a{
-                  display: block;
-                }
+                margin-bottom:15px;
                 &.active{
-                  background-color: #D89020;
-                  border-color: #D89020;
+                  background-color: #5C9ACF;
+                  border-color: #5C9ACF;
                   a{
                     color: #fff;
                   }
                 }
                 &.router-link-active{
-                  background-color: #D89020;
-                  border-color: #D89020;
+                  background-color: #5C9ACF;
+                  border-color: #5C9ACF;
                   color: #fff;
                   a{
                     color: #fff;
@@ -276,8 +262,8 @@ export default {
           float: left;
           width: 100%;
           .main-content{
-            margin-left: 145px;
-            padding: 0 15px 0 15px;
+            margin-left: 180px;
+            padding: 0 0 0 20px;
           }
         }
       }
