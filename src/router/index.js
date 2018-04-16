@@ -35,6 +35,17 @@ const ColumnSplit = (resolve) => {
     resolve(module);
   })
 }
+const fontsplit = (resolve) => {
+  import('@/views/fontsplit/fontsplit').then((module) => {
+    resolve(module);
+  })
+}
+
+const textSplit = (resolve) => {
+  import('@/views/textSplit/textSplit').then((module) => {
+    resolve(module);
+  })
+}
 const NotFound = (resolve) => {
   import('@/views/404').then((module) => {
     resolve(module);
@@ -92,6 +103,30 @@ let routes = [
       }
     ]
   },
+  {
+    path:'/platform',
+    component: Index,
+    name: '字框切分标注',
+    redirect: '/fontsplit',
+    children:[
+      {
+        path:'/fontsplit',
+        component: fontsplit,
+      }
+    ]
+  }, 
+{
+  path:'/platform',
+  component: Index,
+  name: '文本识别标注',
+  redirect: '/textsplit',
+  children:[
+    {
+      path:'/textsplit',
+      component: textSplit,
+    }
+  ]
+},
   {
     path: '/404',
     component: NotFound,
