@@ -202,12 +202,9 @@ export default {
         line-height:50px;
         background-color: #5C9ACF;
         padding:0 10px;
-<<<<<<< HEAD
         border-top-left-radius:5px;
         border-top-right-radius:5px;
         box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
-=======
->>>>>>> 1ed35cb3f68c54a983388e4a76052fab02fe83bf
         .left{
           span{
             color: #fff;
@@ -228,7 +225,6 @@ export default {
         }
       }
       .container{
-<<<<<<< HEAD
         padding:20px 0 50px 0;
         min-height:520px;
         margin-bottom:150px;
@@ -236,9 +232,7 @@ export default {
         border-bottom-left-radius:5px;
         border-bottom-right-radius:5px;
         box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
-=======
         margin-top:20px;
->>>>>>> 1ed35cb3f68c54a983388e4a76052fab02fe83bf
         .sidebar-wrapper{
           .sidebar{
             width: 180px;
@@ -246,16 +240,11 @@ export default {
             position: relative;
             margin-right: -100%;
             .sidebar-menu{
-<<<<<<< HEAD
               border-left:1px solid #e6e6e6;
-=======
-              border-left:1px solid #ccc;
->>>>>>> 1ed35cb3f68c54a983388e4a76052fab02fe83bf
               li{
                 padding:0 10px;
                 height:36px;
                 line-height:36px;
-<<<<<<< HEAD
                 /*text-align: center;*/
                 border:1px solid #e6e6e6;
                 border-left:0 none;
@@ -265,12 +254,6 @@ export default {
                 a{
                   display: block;
                 }
-=======
-                text-align: center;
-                border:1px solid #ccc;
-                border-left:0 none;
-                margin-bottom:15px;
->>>>>>> 1ed35cb3f68c54a983388e4a76052fab02fe83bf
                 &.active{
                   background-color: #5C9ACF;
                   border-color: #5C9ACF;
