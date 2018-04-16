@@ -107,4 +107,7 @@ export default {
   .el-dropdown-menu__item{
     min-width:60px;
   }
+  .el-dialog__body{
+    padding:10px 20px 30px 20px;
+  }
 </style>

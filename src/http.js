@@ -5,7 +5,7 @@ import router from "./router/index";
 if (process.env.NODE_ENV==="production"){
   //axios.defaults.baseURL = '';
 }else{
-  //axios.defaults.baseURL = '';
+  //axios.defaults.baseURL = 'http://192.168.31.252:8000/api';
 }
 // 拦截器
 axios.interceptors.request.use(

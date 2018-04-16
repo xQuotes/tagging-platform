@@ -78,7 +78,7 @@ export default {
   .index-in{
     .page-wrapper{
       position:relative;
-      margin-top:50px;
+      margin-top:30px;
       min-height:550px;
       .header{
         height:50px;
@@ -87,13 +87,14 @@ export default {
         padding:0 10px;
         border-top-left-radius:5px;
         border-top-right-radius:5px;
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
         .left{
           span{
             color: #fff;
             font-size:14px;
           }
           em{
-            color: #fff;
+            color: #ec0000;
             font-size:14px;
           }
         }
@@ -107,11 +108,13 @@ export default {
         }
       }
       .container{
-        padding-top:20px;
-        min-height:550px;
+        padding:20px 0 50px 0;
+        min-height:520px;
+        margin-bottom:150px;
         background:#fff;
         border-bottom-left-radius:5px;
         border-bottom-right-radius:5px;
+        box-shadow: 0 2px 15px 0 rgba(0,0,0,.1);
         .sidebar-wrapper{
           .sidebar{
             width: 145px;
@@ -119,15 +122,20 @@ export default {
             position: relative;
             margin-right: -100%;
             .sidebar-menu{
-              border-left:1px solid #767676;
+              border-left:1px solid #e6e6e6;
               li{
                 padding:0 10px;
                 height:36px;
                 line-height:36px;
-                text-align: center;
-                border:1px solid #767676;
+                /*text-align: center;*/
+                border:1px solid #e6e6e6;
                 border-left:0 none;
                 margin-bottom:10px;
+                font-size:14px;
+                background:#f9f9f9;
+                a{
+                  display: block;
+                }
                 &.active{
                   background-color: #D89020;
                   border-color: #D89020;
@@ -151,8 +159,8 @@ export default {
           float: left;
           width: 100%;
           .main-content{
-            margin-left: 180px;
-            padding: 0 0 0 20px;
+            margin-left: 145px;
+            padding: 0 15px 0 15px;
           }
         }
       }
