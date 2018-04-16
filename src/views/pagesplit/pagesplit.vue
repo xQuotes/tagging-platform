@@ -1,5 +1,6 @@
 <template>
   <div class="pagesplit" v-title="'页切分标注'">
+<<<<<<< HEAD
     <div class="btns">
       <span @click="getData('获取标注数据')" :class="{active:activeName === '获取标注数据'}">获取标注数据</span>
       <span @click="examShow('查看示例')" :class="{active:activeName === '查看示例'}">查看示例</span>
@@ -33,6 +34,9 @@
         </div>
     </div>
     <div class="submit fr">提交</div>
+=======
+    页切分标注
+>>>>>>> 1ed35cb3f68c54a983388e4a76052fab02fe83bf
   </div>
 </template>
 
