@@ -86,9 +86,9 @@ export default {
     span{
       display:inline-block;
       width:120px;
-      height:30px;
+      height:35px;
       text-align: center;
-      line-height:30px;
+      line-height:35px;
       font-size:14px;
       border:1px solid #e6e6e6;
       color: #429bf0;

@@ -200,7 +200,7 @@ export default {
       .header{
         height:50px;
         line-height:50px;
-        background-color: #5C9ACF;
+        background-color: #D89020;
         padding:0 10px;
         .left{
           span{
@@ -225,7 +225,7 @@ export default {
         margin-top:20px;
         .sidebar-wrapper{
           .sidebar{
-            width: 180px;
+            width: 150px;
             float: left;
             position: relative;
             margin-right: -100%;
@@ -238,17 +238,18 @@ export default {
                 text-align: center;
                 border:1px solid #ccc;
                 border-left:0 none;
-                margin-bottom:15px;
+                margin-bottom:10px;
+                font-size:14px;
                 &.active{
-                  background-color: #5C9ACF;
-                  border-color: #5C9ACF;
+                  background-color: #D89020;
+                  border-color: #D89020;
                   a{
                     color: #fff;
                   }
                 }
                 &.router-link-active{
-                  background-color: #5C9ACF;
-                  border-color: #5C9ACF;
+                  background-color: #D89020;
+                  border-color: #D89020;
                   color: #fff;
                   a{
                     color: #fff;
@@ -262,8 +263,8 @@ export default {
           float: left;
           width: 100%;
           .main-content{
-            margin-left: 180px;
-            padding: 0 0 0 20px;
+            margin-left: 150px;
+            padding: 0 15px 0 15px;
           }
         }
       }
