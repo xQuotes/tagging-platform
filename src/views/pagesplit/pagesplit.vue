@@ -24,7 +24,7 @@
       </div>
     </el-dialog>
     <div class="container">
-        <div class="notask" v-if="models.length === 0">
+        <div class="nodata" v-if="models.length === 0">
           <p>暂无标注数据</p>
           <p>请点击<em>获取标注数据按钮</em>获取标注任务</p>
         </div>
@@ -131,11 +131,12 @@ export default {
     position: relative;
     overflow-x:auto;
     box-sizing:border-box;
-    .notask{
+    .nodata{
       position: absolute;
       left:50%;
       top:50%;
       transform: translate(-50%,-50%);
+      font-size:14px;
       p{
         text-align: center;
         em{

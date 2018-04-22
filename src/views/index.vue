@@ -264,7 +264,7 @@ export default {
           width: 100%;
           .main-content{
             margin-left: 150px;
-            padding: 0 15px 0 15px;
+            padding: 0 15px 80px 15px;
           }
         }
       }
