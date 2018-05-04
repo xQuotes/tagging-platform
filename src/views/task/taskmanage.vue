@@ -4,7 +4,30 @@
     	<span class="active">任务管理</span>
     	<span @click="goMember">人员管理</span>
     </div>
-    <div class="create">新建任务</div>
+    <div class="create" @click="taskShow">新建任务</div>
+    <!-- 新建任务弹窗 -->
+    <el-dialog class="taskdialog"
+      title="新建标注任务"
+      :visible.sync="taskVisible"
+      width="60%">
+      <div class="taskname">
+      	<p>1.请输入任务名称</p>
+      	<input type="text" name="" placeholder="请输入任务名称">
+      </div>
+      <div class="choosetask">
+      	<p>2.请选择标任务类型&nbsp;&nbsp;注：支持任务类型多选</p>
+      	<el-checkbox-group v-model="checkList">
+	    <el-checkbox label="页切分标注"></el-checkbox>
+	    <el-checkbox label="列切分标注"></el-checkbox>
+	    <el-checkbox label="字框切分标注"></el-checkbox>
+	    <el-checkbox label="文本识别标注"></el-checkbox>
+	  </el-checkbox-group>
+      </div>
+      <div class="upload">
+      	<p>3.上传标注文件&nbsp;&nbsp;注：支持批量上传JPG格式图片，一次最多上传1000个文件</p>
+      </div>
+    </el-dialog>
+    <!-- ./新建任务弹窗 -->
     <div class="datalist">
     	<table>
     		<thead>
@@ -134,11 +157,16 @@ export default {
   },	
   data () {
     return {
+      taskVisible:true,	
       curpage: 1,
       totalpage:5,
+      checkList: []
     }
   },
   methods:{
+  	taskShow(){
+  		this.taskVisible = true;
+  	},
   	goNextPage(data){
   		this.curpage = data.page;
   	},
@@ -183,6 +211,37 @@ export default {
 			cursor: pointer;
 			margin-bottom: 20px;
 			color:#429BF0;
+		}
+		.taskdialog{
+			.taskname{
+				margin-bottom: 15px;
+				p{
+					margin-bottom: 6px;
+					font-weight:bold;
+				}
+				input{
+					display:block;
+					width: 300px;
+					padding:0 5px;
+					height:32px;
+					border:0;
+					border:1px solid #ccc;
+					border-radius: 3px;
+				}
+			}
+			.choosetask{
+				margin-bottom: 8px;
+				p{
+					margin-bottom: 4px;
+					font-weight:bold;
+				}
+			}
+			.upload{
+				p{
+					margin-bottom: 4px;
+					font-weight:bold;
+				}
+			}
 		}
 		.datalist{
 			table{

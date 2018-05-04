@@ -3,10 +3,11 @@
     <div class="index-in w">
       <div class="page-wrapper">
         <div class="header clearfix">
-          <div class="left fl"><span>欢迎登录藏经图文标注管理平台,&nbsp;</span><em>深入经藏智慧如海!</em></div>
+          <div class="left fl"><img src="../assets/title.png" height="48" width="540" alt="">&nbsp;<span>欢迎您登录藏经图文标注管理平台！</span></div>
           <div class="right fr">
             <el-dropdown :hide-on-click="false" trigger="click">
               <span class="el-dropdown-link">
+                <img class="user" src="../assets/user.png" alt="">
                 12345678@qq.com<i class="el-icon-caret-bottom el-icon--right"></i>
               </span>
               <el-dropdown-menu slot="dropdown">
@@ -175,6 +176,11 @@ export default {
             color: #fff;
             font-size:14px;
           }
+          img{
+            width: 260px;
+            height:23px;
+            margin-top: 13px;
+          }
         }
         .right{
           .el-dropdown{
@@ -182,6 +188,11 @@ export default {
               cursor: pointer;
               color:#fff;
             }
+          }
+          .user{
+            width: 24px;
+            height:24px;
+            margin-top: 14px;
           }
         }
       }

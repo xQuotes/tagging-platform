@@ -78,20 +78,20 @@ export default {
 .pointer {
   cursor: pointer;
 }
-// 清除抖动
+//清除抖动
 .login {
   overflow: hidden;
 }
 .login-container {
-  margin-top: 50px;
+  margin: 50px auto;
   min-height: 500px;
   .top-panel {
     height: 50px;
     border-radius: 50px 50px 0 0;
-    background-color: #d89020;
+    background-color: #f7aa32;
   }
   .center-panel {
-    height: 750px;
+    height: 650px;
     position: relative;
     background: no-repeat center center;
     background-size: cover;
