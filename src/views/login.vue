@@ -87,7 +87,7 @@ export default {
   min-height: 500px;
   .top-panel {
     height: 50px;
-    border-radius: 50px 50px 0 0;
+    border-radius: 30px 30px 0 0;
     background-color: #f7aa32;
   }
   .center-panel {
@@ -95,7 +95,7 @@ export default {
     position: relative;
     background: no-repeat center center;
     background-size: cover;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 30px 30px;
     // 左侧文字
     .left-tip {
       padding: 90px 30px;

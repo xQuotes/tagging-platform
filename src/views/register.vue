@@ -92,19 +92,19 @@ export default {
   overflow: hidden;
 }
 .register-container {
-  margin-top: 50px;
+  margin: 50px auto;
   min-height: 500px;
   .top-panel {
     height: 50px;
-    border-radius: 50px 50px 0 0;
-    background-color: #d89020;
+    border-radius: 30px 30px 0 0;
+    background-color: #f7aa32;
   }
   .center-panel {
-    height: 750px;
+    height: 650px;
     position: relative;
     background: no-repeat center center;
     background-size: cover;
-    border-radius: 0 0 50px 50px;
+    border-radius: 0 0 30px 30px;
     .left-tip {
       padding: 90px 30px;
       width: 20px;
@@ -117,7 +117,7 @@ export default {
       }
     }
     .right-register {
-      padding: 100px 80px;
+      padding: 60px 80px;
       // .register-title {
       //   font-family: MicrosoftYaHei-Bold;
       //   font-size: 48px;

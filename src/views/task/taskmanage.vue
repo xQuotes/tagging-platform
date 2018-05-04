@@ -25,6 +25,19 @@
       </div>
       <div class="upload">
       	<p>3.上传标注文件&nbsp;&nbsp;注：支持批量上传JPG格式图片，一次最多上传1000个文件</p>
+      	<uploader :options="options" class="uploader-example">
+		    <uploader-unsupport></uploader-unsupport>
+		    <uploader-drop>
+		      <p class="drop">拖拽上传 or</p>
+		      <uploader-btn>选择文件</uploader-btn>
+		      <uploader-btn :attrs="attrs">选择图片</uploader-btn>
+		      <uploader-btn :directory="true">选择文件夹</uploader-btn>
+		    </uploader-drop>
+		    <uploader-list></uploader-list>
+	  </uploader>
+      </div>
+      <div class="dialog-btns">
+      	<span class="confirm">完成</span>
       </div>
     </el-dialog>
     <!-- ./新建任务弹窗 -->
@@ -157,10 +170,17 @@ export default {
   },	
   data () {
     return {
-      taskVisible:true,	
+      taskVisible:false,	
       curpage: 1,
       totalpage:5,
-      checkList: []
+      checkList: [],
+      options: {
+	      target: '//localhost:3002/upload',
+	      testChunks: false
+       },
+       attrs: {
+	      accept: 'image/*'
+        }
     }
   },
   methods:{
@@ -177,9 +197,35 @@ export default {
   }
 }
 </script>
-
+<style lang="scss">
+  .taskdialog{
+    .el-dialog__header{
+      text-align: center;
+    }
+  }
+</style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
+	 .uploader-example {
+	    width: 100%;
+	    margin: 10px auto 0;
+	    font-size: 12px;
+	    box-sizing:border-box;
+	    -webkit-box-sizing: border-box;
+		-moz-box-sizing:border-box;
+	  }
+	  .uploader-example .uploader-btn {
+	    margin-right: 4px;
+	  }
+	  .uploader-example .uploader-list {
+	    max-height: 440px;
+	    overflow: auto;
+	    overflow-x: hidden;
+	    overflow-y: auto;
+	  }
+	  .upload-drop{
+	  	background-color: #fbfbfb;
+	  }
 	.task{
 		padding:0 20px 40px 20px;
 		font-size:14px;
@@ -240,6 +286,28 @@ export default {
 				p{
 					margin-bottom: 4px;
 					font-weight:bold;
+				}
+				.drop{
+					color:#429BF0;
+				}
+			}
+			.dialog-btns{
+				text-align:right;
+				margin-top: 20px;
+				 span{
+					display:inline-block;
+					width: 100px;
+					height:34px;
+					text-align:center;
+					line-height:34px;
+					border:1px solid #e6e6e6;
+					color: #909090;
+					cursor:pointer;
+					&.confirm{
+						border:1px solid #D89020;
+						background-color:#D89020;
+						color: #fff;
+					}
 				}
 			}
 		}

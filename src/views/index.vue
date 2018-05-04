@@ -161,12 +161,12 @@ export default {
       margin-top:50px;
       margin-bottom: 50px;
       min-height:550px;
-      background-color: #fff;
       .header{
         height:50px;
         line-height:50px;
         background-color: #D89020;
         padding:0 10px;
+        border-radius:30px 30px 0 0;
         .left{
           span{
             color: #fff;
@@ -197,8 +197,10 @@ export default {
         }
       }
       .container{
-        margin-top:20px;
+        padding-top:20px;
         min-height:600px;
+        background-color: #fff;
+        border-radius:0 0 30px 30px;
       }
     }
   }

@@ -2,6 +2,7 @@
 // (runtime-only or standalone) has been set in webpack.base.conf with an alias.
 import 'babel-polyfill'
 import Vue from 'vue'
+import uploader from 'vue-simple-uploader'
 import store from "./store/index.js"
 import VueVideoPlayer from 'vue-video-player'
 import 'video.js/dist/video-js.css'
@@ -15,6 +16,7 @@ import router from './router'
 import VueRouter from 'vue-router'
 import axios from './http'
 Vue.prototype.axios = axios;
+Vue.use(uploader);
 Vue.use(VueVideoPlayer);
 Vue.use(VueRouter);
 Vue.use(ElementUI);
