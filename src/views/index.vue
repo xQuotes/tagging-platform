@@ -11,10 +11,10 @@
               </span>
               <el-dropdown-menu slot="dropdown">
                 <el-dropdown-item>
-                    <el-a @click="dialogFormVisible = true">修改密码</el-a>
+                    <span @click="dialogFormVisible = true">修改密码</span>
                 </el-dropdown-item>
                 <el-dropdown-item >
-                   <el-a @click ="singdialog = true;dialogFormVisible=false">退出登录</el-a>
+                   <span @click ="singdialog = true;dialogFormVisible=false">退出登录</span>
                 </el-dropdown-item>
               </el-dropdown-menu>
             </el-dropdown>
@@ -187,6 +187,7 @@ export default {
       }
       .container{
         margin-top:20px;
+        min-height:600px;
       }
     }
   }
