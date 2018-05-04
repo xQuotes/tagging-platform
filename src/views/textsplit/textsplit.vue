@@ -1,6 +1,9 @@
 <template>
   <div class="columnsplit" v-title="'文本识别标注'">
-    <div class="btns">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="btns">
       <span @click="getData('获取标注数据')" :class="{active:activeName === '获取标注数据'}">获取标注数据</span>
       <span @click="introShow('标注说明')" :class="{active:activeName === '标注说明'}">标注说明</span>
     </div>
@@ -24,29 +27,35 @@
       </div>
     </el-dialog>
     <div class="container clearfix">
-    	<div class="left fl">
-    		<div class="nodata">
-	          <p>暂无标注数据</p>
-	          <p>请点击<em>获取标注数据按钮</em>获取标注任务</p>
-	        </div>
-    	</div>
-    	<div class="middle fl">
-    		<div class="nodata">
+      <div class="left fl">
+        <div class="nodata">
+            <p>暂无标注数据</p>
+            <p>请点击<em>获取标注数据按钮</em>获取标注任务</p>
+          </div>
+      </div>
+      <div class="middle fl">
+        <div class="nodata">
             <p>单字识别标注</p>
         </div>
-    	</div>
-    	<div class="right fl">
-    		<div class="nodata">
-	          <p>文本识别内容</p>
+      </div>
+      <div class="right fl">
+        <div class="nodata">
+            <p>文本识别内容</p>
         </div>
-    	</div>
+      </div>
     </div>
     <div class="submit fr">提交</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import SideBar from '../../components/SideBar'
 export default {
+  components:{
+    SideBar,
+   },
   data () {
     return {
       activeName: '',
@@ -68,6 +77,7 @@ export default {
       text-align: center;
     }
   }
+  @import '../../common/style/maincontent.scss'
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>

@@ -1,6 +1,9 @@
 <template>
   <div class="columnsplit" v-title="'列切分标注'">
-    <div class="btns">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="btns">
       <span @click="getData('获取标注数据')" :class="{active:activeName === '获取标注数据'}">获取标注数据</span>
       <span @click="examShow('查看示例')" :class="{active:activeName === '查看示例'}">查看示例</span>
       <span @click="introShow('标注说明')" :class="{active:activeName === '标注说明'}">标注说明</span>
@@ -26,24 +29,30 @@
       </div>
     </el-dialog>
     <div class="container clearfix">
-    	<div class="left fl">
-    		<div class="nodata">
-	          <p>暂无标注数据</p>
-	          <p>请点击<em>获取标注数据按钮</em>获取标注任务</p>
-	        </div>
-    	</div>
-    	<div class="right fr">
-    		<div class="nodata">
-	          <p>列切分标注</p>
-	        </div>
-    	</div>
+      <div class="left fl">
+        <div class="nodata">
+            <p>暂无标注数据</p>
+            <p>请点击<em>获取标注数据按钮</em>获取标注任务</p>
+          </div>
+      </div>
+      <div class="right fr">
+        <div class="nodata">
+            <p>列切分标注</p>
+          </div>
+      </div>
     </div>
     <div class="submit fr">提交</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import SideBar from '../../components/SideBar'
 export default {
+   components:{
+    SideBar,
+   },
   data () {
     return {
       activeName: '',
@@ -69,6 +78,7 @@ export default {
       text-align: center;
     }
   }
+  @import '../../common/style/maincontent.scss'
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>

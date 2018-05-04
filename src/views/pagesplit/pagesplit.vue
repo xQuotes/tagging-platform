@@ -1,6 +1,9 @@
 <template>
   <div class="pagesplit" v-title="'页切分标注'">
-    <div class="btns">
+    <side-bar></side-bar>
+    <div class="content-wrapper">
+      <div class="main-content">
+        <div class="btns">
       <span @click="getData('获取标注数据')" :class="{active:activeName === '获取标注数据'}">获取标注数据</span>
       <span @click="examShow('查看示例')" :class="{active:activeName === '查看示例'}">查看示例</span>
       <span @click="introShow('标注说明')" :class="{active:activeName === '标注说明'}">标注说明</span>
@@ -33,11 +36,17 @@
         </div>
     </div>
     <div class="submit fr">提交</div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script>
+import SideBar from '../../components/SideBar'
 export default {
+  components:{
+    SideBar,
+   },
   data () {
     return {
       activeName: '',
@@ -79,6 +88,7 @@ export default {
       text-align: center;
     }
   }
+  @import '../../common/style/maincontent.scss'
 </style>
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>

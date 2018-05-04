@@ -20,8 +20,8 @@ const Home = (resolve) => {
     resolve(module);
   })
 }
-const Vedio = (resolve) => {
-  import('@/views/homepage/vedio').then((module) => {
+const Video = (resolve) => {
+  import('@/views/homepage/video').then((module) => {
     resolve(module);
   })
 }
@@ -51,6 +51,16 @@ const NotFound = (resolve) => {
     resolve(module);
   })
 }
+const Task = (resolve) => {
+  import('@/views/task/taskmanage').then((module) => {
+    resolve(module);
+  })
+}
+const Member = (resolve) => {
+  import('@/views/member/membermanage').then((module) => {
+    resolve(module);
+  })
+}
 let routes = [
   {
     path:'/',
@@ -73,8 +83,8 @@ let routes = [
         component: Home,
       },
       {
-        path:'/vedio',
-        component: Vedio,
+        path:'/video',
+        component: Video,
         name: '培训视频'
       },
     ]
@@ -115,18 +125,42 @@ let routes = [
       }
     ]
   }, 
-{
-  path:'/platform',
-  component: Index,
-  name: '文本识别标注',
-  redirect: '/textsplit',
-  children:[
-    {
-      path:'/textsplit',
-      component: textSplit,
-    }
-  ]
-},
+  {
+    path:'/platform',
+    component: Index,
+    name: '文本识别标注',
+    redirect: '/textsplit',
+    children:[
+      {
+        path:'/textsplit',
+        component: textSplit,
+      }
+    ]
+  },
+  {
+    path:'/platform',
+    component: Index,
+    name: '任务管理',
+    redirect: '/taskmanage',
+    children:[
+      {
+        path:'/taskmanage',
+        component: Task,
+      }
+    ]
+  },
+  {
+    path:'/platform',
+    component: Index,
+    name: '人员管理',
+    redirect: '/membermanage',
+    children:[
+      {
+        path:'/membermanage',
+        component: Member,
+      }
+    ]
+  },
   {
     path: '/404',
     component: NotFound,

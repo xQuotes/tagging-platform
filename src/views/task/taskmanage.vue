@@ -1,6 +1,6 @@
 <template>
-  <div class="vedio" v-title="'培训视频'">
-    培训视频
+  <div class="task" v-title="'任务管理'">
+    404
   </div>
 </template>
 
@@ -16,5 +16,5 @@ export default {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style lang="scss" scoped>
-
+	
 </style>

@@ -14,21 +14,19 @@
                 </div>
                 <form id="form" class="clearfix" method="post">
                     <div>
-                      <div class="flex-one"><label for="">账号 :</label></div>
+                      <div class="flex-one"><label for="">账号：</label></div>
                       <div class="flex-manager"><input type="text" class="login-input input"></div>
                     </div>
                     <div>
-                      <div class="flex-one"><label for="">密码 :</label></div>
+                      <div class="flex-one"><label for="">密码：</label></div>
                       <div class="flex-manager"><input type="text" class="login-input input"></div>
                     </div>
                     <span class="forget pointer fr" v-on:click="forgetPass">忘记密码?</span>
                     <button class="form-btn" v-on:click="sendLogin($event,isAdmin)">登陆</button>
                     <span class="reg fr">没有账号
-                      <b>
                         <router-link to="/register" target="_blank">
-                          <el-a  >立即注册</el-a>
+                          <span>立即注册</span>
                         </router-link>
-                      </b>
                     </span>
               </form>
               </div>
@@ -115,8 +113,6 @@ export default {
       margin-top: 150px;
       padding: 0 50px;
       .login-title {
-        font-family: MicrosoftYaHei-Bold;
-        font-weight: bold;
         font-size: 48px;
         color: #429bf0;
         letter-spacing: 4.8px;
@@ -128,7 +124,6 @@ export default {
         div {
           // flex: 1;
           border: 1px solid #fff ;
-          font-family: MicrosoftYaHei;
           font-size: 20px;
           color: #ffffff;
           letter-spacing: 2px;
@@ -140,10 +135,8 @@ export default {
         margin-top: 25px;
         line-height: 50px;
         .forget {
-          font-family: MicrosoftYaHei;
           font-size: 14px;
           color: red;
-          letter-spacing: 1.4px;
           line-height: 30px !important;
         }
         .form-btn {
@@ -152,22 +145,16 @@ export default {
           border: 0;
           cursor: pointer;
           background-color: #d89020;
-          font-family: MicrosoftYaHei;
           font-size: 20px;
           color: #ffffff;
-          letter-spacing: 2px;
+          letter-spacing: 1px;
         }
         .reg {
-          font-family: MicrosoftYaHei-Bold;
-          font-weight: bold;
           font-size: 16px;
           color: #ffffff;
-          letter-spacing: 1.6px;
-          b el-a{
-            font-family: MicrosoftYaHei-Bold;
+          span{
             font-size: 16px;
             color: #b5071b;
-            letter-spacing: 1.6px;
             line-height: 21px;
             cursor: pointer;
           }
@@ -192,7 +179,6 @@ export default {
           flex: 3;
         }
         label {
-          font-family: MicrosoftYaHei;
           font-size: 20px;
           color: #ffffff;
           letter-spacing: 2px;
