@@ -1,5 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+
+import store from '../store/index'
+
 const Login = (resolve) => {
   import('@/views/login').then((module) => {
     resolve(module);
@@ -63,108 +66,74 @@ const Member = (resolve) => {
 }
 let routes = [
   {
-    path:'/',
-    component: Login,
-    name: '登录'
-  },
-  {
-    path:'/register',
-    component: Register,
-    name: '注册'
-  },
-  {
-    path:'/platform',
+    path: '/',
     component: Index,
-    name: '首页',
-    redirect: '/home',
-    children:[
+    children: [
       {
-        path:'/home',
+        path: '',
+        redirect: 'home'
+      },
+      {
+        path: 'home',
+        name: '首页',
         component: Home,
       },
       {
-        path:'/video',
-        component: Video,
-        name: '培训视频'
+        path: 'video',
+        name: '培训视频',
+
+        component: Video
       },
-    ]
-  },
-  {
-    path:'/platform',
-    component: Index,
-    name: '页切分',
-    redirect: '/pagesplit',
-    children:[
       {
-        path:'/pagesplit',
+        path: 'pagesplit',
+        name: '页切分',
+
         component: PageSplit,
-      }
-    ]
-  },
-  {
-    path:'/platform',
-    component: Index,
-    name: '列切分',
-    redirect: '/columnsplit',
-    children:[
+      },
       {
-        path:'/columnsplit',
+        path: 'columnsplit',
+        name: '列切分',
+
         component: ColumnSplit,
-      }
-    ]
-  },
-  {
-    path:'/platform',
-    component: Index,
-    name: '字框切分标注',
-    redirect: '/fontsplit',
-    children:[
+      },
       {
-        path:'/fontsplit',
+        path: 'fontsplit',
+        name: '字框切分标注',
+
         component: fontsplit,
-      }
-    ]
-  }, 
-  {
-    path:'/platform',
-    component: Index,
-    name: '文本识别标注',
-    redirect: '/textsplit',
-    children:[
+      },
       {
-        path:'/textsplit',
+        path: 'textsplit',
+        name: '文本识别标注页',
         component: textSplit,
-      }
-    ]
-  },
-  {
-    path:'/platform',
-    component: Index,
-    name: '任务管理',
-    redirect: '/taskmanage',
-    children:[
+      },
       {
-        path:'/taskmanage',
+        path: 'taskmanage',
+        name: '任务管理',
         component: Task,
-      }
-    ]
-  },
-  {
-    path:'/platform',
-    component: Index,
-    name: '人员管理',
-    redirect: '/membermanage',
-    children:[
+      },
       {
-        path:'/membermanage',
+        path: 'membermanage',
+        name: '人员管理',
+
         component: Member,
       }
     ]
   },
   {
+    path: '/login',
+    component: Login,
+    name: '登录'
+  },
+  {
+    path: '/register',
+    component: Register,
+    name: '注册'
+  },
+  {
     path: '/404',
     component: NotFound,
-    name: '',
+    name: '404',
   },
   {
     path: '*',
@@ -173,5 +142,33 @@ let routes = [
 ]
 const router = new VueRouter({
   routes
+})
+router.beforeEach((to, from, next) => {
+  // 权限判断
+
+  let needCheckLoginPages = [
+    // 需要判断的路径
+    '登录',
+    '注册',
+    '404'
+  ]
+
+  const needAuth = !needCheckLoginPages.find((value) => {
+    return value == to.name
+  })
+  const isLogin = sessionStorage.userInfo
+  // 判断路径不在数组里 并且 没有登陆
+  if (!isLogin && needAuth) {
+    next({
+      path: '/login',
+      query: { redirect: to.fullPath }  // 将跳转的路由path作为参数，登录成功后跳转到该路由
+    })
+  } else if (isLogin && !needAuth) {
+    next({
+      path: '/home'
+    })
+  } else {
+    next()
+  }
 })
 export default router;

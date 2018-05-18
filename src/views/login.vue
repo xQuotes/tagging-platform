@@ -9,20 +9,20 @@
               <div class="right-login fr">
                 <div><span class="login-title">藏经图文标注平台</span></div>
                 <div class="login-tab">
-                  <div id="noRole" :class="{active:1 === tabNum}" v-on:click="tabNum = 1;isAdmin = 1">普通用户</div>
-                  <div id="hasRole" :class="{active:2 === tabNum}" v-on:click="tabNum = 2;isAdmin = 2">管理员用户</div>
+                  <div id="noRole" :class="{active:1 === isAdmin}" v-on:click="isAdmin = 1">普通用户</div>
+                  <div id="hasRole" :class="{active:2 === isAdmin}" v-on:click="isAdmin = 2">管理员用户</div>
                 </div>
-                <form id="form" class="clearfix" method="post">
+                <form id="form" class="clearfix" method="post" onsubmit="return false;">
                     <div>
                       <div class="flex-one"><label for="">账号：</label></div>
-                      <div class="flex-manager"><input type="text" class="login-input input"></div>
+                      <div class="flex-manager"><input v-model="form.account" type="text" class="login-input input"></div>
                     </div>
                     <div>
                       <div class="flex-one"><label for="">密码：</label></div>
-                      <div class="flex-manager"><input type="text" class="login-input input"></div>
+                      <div class="flex-manager"><input v-model="form.password" type="password" class="login-input input"></div>
                     </div>
-                    <span class="forget pointer fr" v-on:click="forgetPass">忘记密码?</span>
-                    <button class="form-btn" v-on:click="sendLogin($event,isAdmin)">登陆</button>
+                    <span class="forget pointer fr" @click="forgetPass">忘记密码?</span>
+                    <button class="form-btn" @click="sendLogin">登陆</button>
                     <span class="reg fr">没有账号
                         <router-link to="/register" target="_blank">
                           <span>立即注册</span>
@@ -39,8 +39,7 @@
 export default {
   data() {
     return {
-      tabNum: 0,
-      // 普通 1 or 管理 2 
+      // 普通 1 or 管理 2
       isAdmin: 1,
       // login form
       form: {
@@ -49,21 +48,36 @@ export default {
       },
       // 背景图
       bgdiv: {
-           backgroundImage: 'url(' + require('assets/login-bg.jpg') + ')'
-       }
+        backgroundImage: "url(" + require("assets/login-bg.jpg") + ")"
+      }
     };
   },
   methods: {
-    modifyActive: (index) => {
+    modifyActive(index) {
       this.tabNum = index;
     },
     // 忘记密码
-    forgetPass: () => {
+    forgetPass() {
       alert("弹出忘记密码框");
     },
     // 登陆
-    sendLogin: (e, isAdmin) => {
-      alert("登陆请求" + isAdmin);
+    sendLogin() {
+      const { account, password } = this.form;
+      if (account === "admin" && password === "admin") {
+        if (this.$route.query.redirect) {
+          sessionStorage.setItem(
+            "userInfo",
+            JSON.stringify({
+              account
+            })
+          );
+          let redirect = this.$route.query.redirect;
+          this.$router.push(redirect);
+        } else {
+          this.$router.push("/home");
+          alert("请登录账号：admin 密码： admin");
+        }
+      }
     }
   }
 };
@@ -123,7 +137,7 @@ export default {
         justify-content: space-around;
         div {
           // flex: 1;
-          border: 1px solid #fff ;
+          border: 1px solid #fff;
           font-size: 20px;
           color: #ffffff;
           letter-spacing: 2px;
@@ -152,7 +166,7 @@ export default {
         .reg {
           font-size: 16px;
           color: #ffffff;
-          span{
+          span {
             font-size: 16px;
             color: #b5071b;
             line-height: 21px;
